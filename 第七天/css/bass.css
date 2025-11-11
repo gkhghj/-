@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+img {
+  border: none; /* 去除图片默认边框 */
+  vertical-align: top; /* 解决图片下方的空白间隙 */
+}
+a{
+    color: #333;
+    text-decoration: none;
+}
