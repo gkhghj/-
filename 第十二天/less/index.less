@@ -1,0 +1,78 @@
+//out: ../css/
+
+@import "./base.less";
+@rootsize:37.5rem;
+ 
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 (15 / 37.5rem);
+    height: (44 / 37.5rem);
+    // background-color: pink;
+    line-height: (44 / 37.5rem);
+    .icon-font {
+        font-size: (22/@rootsize);
+    }
+    h4 {
+        font-size: (17/@rootsize);
+    }
+    .note {
+        font-size: (15 / @rootsize);
+        color: #2cb5a5;
+    }
+    
+}
+.banner{
+        text-align: center;
+        margin-top: (30/@rootsize);
+        margin-bottom: (34/@rootsize);
+        img{
+            margin-bottom: (18/@rootsize);
+            width: (240/@rootsize);
+            height: (206/@rootsize);
+        }
+        p{
+            font-size: (16/@rootsize);
+            span{
+                color:#16c2a3;
+            }
+
+        }
+    }
+.type{
+    padding: 0 (15/@rootsize);
+    li{
+        height: (78/@rootsize);
+        border: 1px solid #ededed;
+        border-radius: (4/@rootsize);
+        margin-bottom: (15/@rootsize);
+        padding: 0 (15/@rootsize);
+        a{
+            display: flex;
+            align-items: center;
+            height: (78/@rootsize);
+            img{
+                width: (40/@rootsize);
+                height: (40/@rootsize);
+                margin-right: (15/@rootsize);
+            }
+            .txt{
+                flex: 1;
+                h4 {
+                    font-size: (16/@rootsize);
+                    color: #3c3e42;
+                    line-height: (24/@rootsize);
+                }
+                p{
+                    font-size: (13/@rootsize);
+                    color: #848484;
+                }
+            }
+            .iconfont{
+                font-size: (16/@rootsize);
+
+            }
+        }
+    }
+
+}
