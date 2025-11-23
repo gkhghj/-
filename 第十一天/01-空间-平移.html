@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>空间平移</title>
+  <style>
+    .father {
+      position: relative;
+      /* perspective: 1000px; */
+      transform-style: preserve-3d;
+      /* transform: rotateY(89deg); */
+      transition: all 2s;
+    }
+    .father div {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+    }
+    .son {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      transform: translateZ(100px);
+     
+    }
+    .two{
+       width: 200px;
+      height: 200px;
+      background-color: blue;
+      transform: translateZ(-100px);
+
+    }
+
+     .father:hover {
+     transform: rotateY(90deg);
+    } 
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son"></div>
+    <div class="two"></div>
+  </div>
+</body>
+</html>
