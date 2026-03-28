@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B站风格页面</title>
+  <!-- 引入图标字体 -->
+  <link rel="stylesheet" href="./css-basic.css">
+  <link rel="stylesheet" href="./css-carousel .css">
+  <link rel="stylesheet" href="./css-search.css">
+  <link rel="stylesheet" href="./css-video .css">
+</head>
+<body>
+   <body>
+  <!-- 登录弹窗遮罩层 -->
+  <div class="login-modal-overlay" id="loginOverlay">
+    <div class="login-modal">
+      <div class="login-modal-header">
+        <h3>登录bilibili</h3>
+        <button class="close-btn" id="closeLogin">&times;</button>
+      </div>
+      <div class="login-modal-body">
+        <div class="login-tabs">
+          <span class="login-tab active">扫码登录</span>
+          <span class="login-tab">账号登录</span>
+        </div>
+        <div class="login-content">
+          <!-- 二维码区域 -->
+          <div class="qrcode-area">
+            <div class="qrcode-box">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y0ZjRmNCIvPjxwYXRoIGQ9Ik0yMCAyMGgyMGwtMjAgMjB2LTIwem0xNjAgMGgtMjB2MjBoMjB2LTIwem0tMjAgMzBoMjBsLTIwLTIwdjIweiIvPjxwYXRoIGQ9Ik01MCA1MGgtMjB2MjBoMjB2LTIwem0xMCAxMGgtMjB2MjBoMjB2LTIwem0tMjAgMjBoMjB2LTIwaC0yMHptMzAgMGgtMjB2MjBoMjB2LTIwem0xMCAxMGgtMjB2MjBoMjB2LTIwem0tMjAgMjBoMjB2LTIwaC0yMHptMzAgMGgtMjB2MjBoMjB2LTIwem0xMCAxMGgtMjB2MjBoMjB2LTIwem0tMjAgMjBoMjB2LTIwaC0yMHoiIGZpbGw9IiMwMDAiLz48L3N2Zz4=" alt="二维码" class="qrcode-img">
+              <div class="qrcode-cover"></div>
+            </div>
+            <p class="qrcode-tip">打开手机扫码登录</p>
+          </div>
+          <!-- 账号登录表单（默认隐藏） -->
+          <div class="account-login" style="display: none;">
+            <div class="form-group">
+              <input type="text" placeholder="请输入手机号或邮箱" class="login-input">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="请输入密码" class="login-input">
+            </div>
+            <div class="form-options">
+              <label><input type="checkbox"> 记住我</label>
+              <a href="#" class="forgot-link">忘记密码？</a>
+            </div>
+            <button class="login-submit">登录</button>
+          </div>
+        </div>
+        <div class="login-footer">
+          <a href="#">注册新账号</a>
+          <span>|</span>
+          <a href="#">意见反馈</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 原有内容... -->
+  <!-- 顶部导航栏 -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <a href="#" class="logo">bilibili</a>
+      <nav class="nav-list">
+        <a href="#" class="active">首页</a>
+        <a href="#">番剧</a>
+        <a href="#">直播</a>
+        <a href="#">游戏中心</a>
+        <a href="#">漫画</a>
+      </nav>
+    </div>
+<div class="navbar-center">
+  <div class="search-wrapper">
+    <input 
+      type="text" 
+      id="searchInput"
+      placeholder="搜索视频、番剧、UP主..."
+      autocomplete="off"
+    >
+    <button><i class="icon-search"></i></button>
+    
+    <!-- 搜索建议弹窗 -->
+    <div class="search-suggestions" id="searchSuggestions">
+      <div class="suggestions-header">
+        <span>搜索建议</span>
+      </div>
+      <ul class="suggestions-list" id="suggestionsList">
+        <li><span class="icon">🔍</span><span class="text">原神</span></li>
+        <li><span class="icon">🔍</span><span class="text">python教程</span></li>
+        <li><span class="icon">🔍</span><span class="text">王者荣耀</span></li>
+        <li><span class="icon">🔍</span><span class="text">数据结构与算法</span></li>
+        <li><span class="icon">🔍</span><span class="text">考研</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+    <div class="navbar-right">
+      <a href="#" class="login-btn">登录</a>
+      <a href="#" class="user-avatar" style="display:none;">
+        <img src="avatar.jpg" alt="">
+      </a>
+    </div>
+  </header>
+
+  <!-- 轮播图区域 -->
+  <section class="banner">
+    <div class="banner-wrapper">
+      <ul class="banner-list">
+        <li class="banner-item active"><a href="#"><img src="img/9.png" alt=""></a></li>
+        <li class="banner-item"><a href="#"><img src="img/10.png" alt=""></a></li>
+        <li class="banner-item"><a href="#"><img src="img/11.png" alt=""></a></li>
+      </ul>
+      <!-- 左右切换按钮 -->
+      <button class="banner-prev">&lt;</button>
+      <button class="banner-next">&gt;</button>
+      <!-- 指示器 -->
+      <ul class="banner-indicator">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </section>
+  <!-- 分类标签区域 -->
+  <section class="category-tabs">
+    <ul class="category-list">
+      <li class="category-item active">
+        <a href="#">
+          <span class="category-icon">🎬</span>
+          <span class="category-name">全部</span>
+        </a>
+      </li>
+      <li class="category-item">
+        <a href="#">
+          <span class="category-icon">🎮</span>
+          <span class="category-name">游戏</span>
+        </a>
+      </li>
+      <li class="category-item">
+        <a href="#">
+          <span class="category-icon">🎵</span>
+          <span class="category-name">音乐</span>
+        </a>
+      </li>
+      <li class="category-item">
+        <a href="#">
+          <span class="category-icon">📚</span>
+          <span class="category-name">知识</span>
+        </a>
+      </li>
+      <li class="category-item">
+        <a href="#">
+          <span class="category-icon">🎬</span>
+          <span class="category-name">动画</span>
+        </a>
+      </li>
+      <li class="category-item">
+        <a href="#">
+          <span class="category-icon">🌿</span>
+          <span class="category-name">生活</span>
+        </a>
+      </li>
+      <li class="category-item">
+        <a href="#">
+          <span class="category-icon">😎</span>
+          <span class="category-name">娱乐</span>
+        </a>
+      </li>
+      <li class="category-item">
+        <a href="#">
+          <span class="category-icon">🔧</span>
+          <span class="category-name">科技</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!-- 视频网格区域 -->
+  <section class="video-grid">
+    <div class="section-header">
+      <h3>热门推荐</h3>
+<div class="header-right">
+  <button class="refresh-btn" id="refreshBtn" title="换一批">
+    <span class="refresh-icon">↻</span>
+    <span class="refresh-text">换一换</span>
+  </button>
+  <a href="#" class="more">查看更多 &gt;</a>
+</div>
+    </div>
+    <ul class="video-list" id="videoList">
+      <!-- 动态生成 -->
+    </ul>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© ————————</p>
+    </div>
+  </footer>
+</body>
+<script src="js-carousel.js"></script>
+<script src="js-movevideo .js"></script>
+<script src="js-search.js"></script>
+<script src="js-category.js"></script>
+<script src="js-login.js"></script>
+
+</html>

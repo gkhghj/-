@@ -1,0 +1,231 @@
+/* 初始化 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  background-color: #f4f4f4;
+  color: #18191c;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+/* 登录弹窗遮罩层 */
+.login-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.login-modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 登录弹窗主体 */
+.login-modal {
+  width: 420px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: transform 0.3s;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.login-modal-overlay.show .login-modal {
+  transform: scale(1);
+}
+
+/* 弹窗头部 */
+.login-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e3e5e7;
+}
+
+.login-modal-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #18191c;
+}
+
+.close-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #f4f4f5;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #9499a0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.close-btn:hover {
+  background: #e3e5e7;
+  color: #18191c;
+}
+
+/* 弹窗内容 */
+.login-modal-body {
+  padding: 24px;
+}
+
+/* 登录标签切换 */
+.login-tabs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.login-tab {
+  font-size: 15px;
+  color: #61666d;
+  cursor: pointer;
+  padding-bottom: 8px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.login-tab.active {
+  color: #fb7299;
+  border-bottom-color: #fb7299;
+}
+
+/* 二维码区域 */
+.qrcode-area {
+  text-align: center;
+}
+
+.qrcode-box {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 16px;
+  background: #f4f4f5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrcode-img {
+  width: 160px;
+  height: 160px;
+}
+
+.qrcode-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.qrcode-box:hover .qrcode-cover {
+  opacity: 0;
+}
+
+.qrcode-tip {
+  font-size: 14px;
+  color: #9499a0;
+}
+
+/* 账号登录表单 */
+.account-login {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e3e5e7;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.login-input:focus {
+  border-color: #fb7299;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #61666d;
+}
+
+.form-options a {
+  color: #00a1d6;
+}
+
+.login-submit {
+  width: 100%;
+  padding: 12px;
+  background: #fb7299;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-submit:hover {
+  background: #ff8eb3;
+}
+
+/* 弹窗底部 */
+.login-footer {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e3e5e7;
+  font-size: 13px;
+  color: #9499a0;
+}
+
+.login-footer a {
+  color: #00a1d6;
+}
+
+.login-footer span {
+  margin: 0 12px;
+}
